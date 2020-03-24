@@ -12,6 +12,8 @@ public class Division {
     @GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	private String level;
+	private int ptsToUp;
+	private int ptsToDown;
 	private Division parentId;
 	
 	public long getId() {
@@ -26,14 +28,25 @@ public class Division {
 	public void setLevel(String level) {
 		this.level = level;
 	}
+	
+	public int getPtsToUp() {
+		return ptsToUp;
+	}
+	public void setPtsToUp(int ptsToUp) {
+		this.ptsToUp = ptsToUp;
+	}
+	public int getPtsToDown() {
+		return ptsToDown;
+	}
+	public void setPtstoDown(int ptsToDown) {
+		this.ptsToDown = ptsToDown;
+	}
 	public Division getParentId() {
 		return parentId;
 	}
 	public void setParentId(Division parentId) {
 		this.parentId = parentId;
 	}
-	
-	
 	
 
 }
