@@ -28,6 +28,7 @@ public class Player {
 	private boolean inTeam;
 	private boolean inSubstitute;
 	private boolean injured;
+	private boolean retired;
 	private Ethnicity ethnicityId;
 	private Team teamId;
 	
@@ -128,6 +129,13 @@ public class Player {
 	}
 	public void setInjured(boolean injured) {
 		this.injured = injured;
+	}
+	
+	public boolean isRetired() {
+		return retired;
+	}
+	public void setRetired(boolean retired) {
+		this.retired = retired;
 	}
 	public Ethnicity getEthnicityId() {
 		return ethnicityId;
