@@ -1,35 +1,61 @@
 package com.delakdev.wvmanager.entities;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="players")
 public class Player {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="id_player")
 	private long id;
+	@Column(name="firstname_player")
 	private String firstName;
+	@Column(name="lastname_player")
 	private String lastName;
+	@Column(name="attack_player")
 	private int attack;
+	@Column(name="block_player")
 	private int block;
+	@Column(name="dig_player")
 	private int dig;
+	@Column(name="passing_player")
 	private int passing;
+	@Column(name="serve_player")
 	private int serve;
+	@Column(name="age_player")
 	private int age;
+	@Column(name="training_count_player")
 	private int trainingCount;
+	@Column(name="image_player")
 	private String image;
 	@Enumerated(EnumType.STRING)
+	@Column(name="position_player")
     private Position position;
+	@Column(name="id_team_player")
 	private boolean inTeam;
+	@Column(name="in_substitute_player")
 	private boolean inSubstitute;
+	@Column(name="injured_player")
 	private boolean injured;
+	@Column(name="retired_player")
 	private boolean retired;
+	@ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_ethnicity_player", referencedColumnName = "id_ethnicity")
 	private Ethnicity ethnicityId;
+	@Column(name="id_team_player", nullable=true)
+    @JoinColumn(name = "id_team_player", referencedColumnName = "id_team", nullable=true)
 	private Team teamId;
 	
 	 public enum Position {
