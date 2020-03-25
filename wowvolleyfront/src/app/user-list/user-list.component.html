@@ -6,6 +6,9 @@
             <th scope="col">#</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
+            <th scope="col">Money</th>
+            <th scope="col">First Login</th>
+            <th scope="col">Team</th>
           </tr>
         </thead>
         <tbody>
@@ -13,6 +16,9 @@
             <td>{{ user.id }}</td>
             <td>{{ user.name }}</td>
             <td><a href="mailto:{{ user.email }}">{{ user.email }}</a></td>
+            <td>{{user.money}}</td>
+            <td>{{true == user.firstLogin ? 'Yes' : 'No' }}</td>
+            <td>{{null == user.team ? 'No Team Yet' : user.team}}</td>
           </tr>
         </tbody>
       </table>

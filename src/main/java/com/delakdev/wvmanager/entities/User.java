@@ -23,9 +23,9 @@ public class User {
 	@Column(name="password_user")
 	private String password;
 	@Column(name="money_user")
-	private int money;
+	private int money = 20000;
 	@Column(name="first_login")
-	private boolean firstLogin;
+	private boolean firstLogin = true;
 	@OneToOne(mappedBy = "userId")
 	private Team team;
 	

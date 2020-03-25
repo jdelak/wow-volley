@@ -29,9 +29,7 @@
               name="password"
               required #password="ngModel">
             <div [hidden]="!password.pristine" class="alert alert-danger">Password is required</div>
-          </div>
-        <input type="hidden" name="money" value=20000 [(ngModel)]="user.money">
-        <input type="hidden" name="first_login" value=true [(ngModel)]="user.first_login">
+        </div>
         <button type="submit" [disabled]="!userForm.form.valid" 
           class="btn btn-info">Submit</button>
       </form>

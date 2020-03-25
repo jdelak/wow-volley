@@ -135,4 +135,4 @@ REFERENCES teams (id_team),
 ADD FOREIGN KEY (id_team_defeated)
 REFERENCES teams (id_team);
 
-
+CREATE SEQUENCE HIBERNATE_SEQUENCE START 1;
