@@ -28,6 +28,8 @@ public class Faction {
 	private Image crest;
 	@OneToMany(mappedBy="factionId")
 	private List <Ethnicity> ethnicities;
+	@OneToMany(mappedBy="factionId")
+	private List <Team> teams;
 	
 	public long getId() {
 		return id;
@@ -52,6 +54,12 @@ public class Faction {
 	}
 	public void setEthnicities(List<Ethnicity> ethnicities) {
 		this.ethnicities = ethnicities;
+	}
+	public List<Team> getTeams() {
+		return teams;
+	}
+	public void setTeams(List<Team> teams) {
+		this.teams = teams;
 	}
 	
 	

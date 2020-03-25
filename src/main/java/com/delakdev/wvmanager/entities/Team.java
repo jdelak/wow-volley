@@ -27,7 +27,8 @@ public class Team {
 	@OneToOne()
     @JoinColumn(name = "id_image_team", referencedColumnName = "id_image")
 	private Image logo;
-	@Column(name="id_faction_team")
+	@ManyToOne()
+    @JoinColumn(name = "id_faction_team", referencedColumnName = "id_faction")
 	private Faction factionId;
 	@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_user_team", referencedColumnName = "id_user")

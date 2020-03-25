@@ -15,22 +15,22 @@ import com.delakdev.wvmanager.repositories.TeamRepository;
 
 @Service
 public class TeamService {
-	
+
 	EntityManager em;
 	@Autowired
 	TeamRepository teamRepo;
-	
+
 	public List<Team> findAll(){
 		return teamRepo.findAll();
 	}
-	
+
 	public List<Player> findPlayerSquadByTeam(Team team){
 		final Query query = em.createQuery("SELECT * from players WHERE team_id ="+team.getId()+" AND in_team = 1");
 		@SuppressWarnings("unchecked")
 		List<Player> players = query.getResultList();
 		return players;
 	}
-	
+
 	public List<Team> findByFaction(Faction faction){
 		final Query query = em.createQuery("SELECT * from teams WHERE faction_id ="+faction.getId()+"");
 		@SuppressWarnings("unchecked")
